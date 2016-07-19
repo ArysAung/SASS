@@ -1,0 +1,62 @@
+@import 'bourbon/bourbon';
+@import 'navBar';
+//Nav Bar in the library
+@import 'aref';
+//Changes the Anchor
+
+.color{
+	color:white;
+}
+
+.header{
+	@extend .color;
+}
+@mixin backgroundFont(
+	$background-color,
+	$fontsize
+	){
+	background-color:$background-color;
+	font-size:$fontsize;
+}
+
+@mixin black(
+	$opacity,
+	$background-color1
+	){
+	opacity:$opacity;
+	background-color:$background-color1;
+}
+
+.box{@include black(".5", "black")}
+
+@mixin white(
+	$opacity,
+	$background-color2
+	){
+	opacity:$opacity;
+	background-color:$background-color2;
+}
+
+h4 {
+	background: shade(red, 49%);
+}
+
+@for $i from 1 through 100{
+	.cell-#{$i} {width: 1% * $i;}
+}
+
+@for $f from 1 through 6 {
+	.fontsize-#{$f} {font-size: 12px * $f; }
+}
+
+@each $list-type in circle, decimal, square, {
+	.lst-#{$list-type} {
+		list-style-type: $list-type;
+	}
+}
+
+@each $bgcolor in red, orange, blue, green, purple, yellow{
+	.bgcolor-#{$bgcolor}{
+		background-color: $bgcolor;
+	}
+}
